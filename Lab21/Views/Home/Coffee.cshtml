@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Coffee";
+}
+<script>var cart = [];
+    var cartItems = [];
+    var productName = ["Americano", "Cappuccino", "Espresso", "Macchiato", "Mocha", "Latte"];
+    var productPrice = [1.20, 4.00, 2.50, 2.00, 1.50, 2.75];
+    function AddToCart(i) {
+        cart.push(productPrice[i]);
+        cartItems.push(productName[i]);
+    }
+    function getTotal() {
+        var total = 0;
+        for (var i = 0; i < cart.length; i++) {
+            total += cart[i];
+        }
+        document.getElementById('total').innerHTML = total;
+
+    }
+    function displayCart() {
+        console.clear();
+        for (var i = 0; i < cart.length; i++) {
+            console.log(cartItems[i]);
+        }
+        getTotal();
+    }</script>
+<h1>Welcome to Grand Circus Coffee Shop</h1>
+<body>
+    <h2>Here's our different choices!</h2>
+    <p>
+        Americano $1.20
+        <button type="button" onclick="AddToCart(0);">Add to cart</button>
+    </p>
+    <p>
+        Cappuccino $4.00
+        <button type="button" onclick="AddToCart(1);">Add to cart</button>
+    </p>
+    <p>
+        Espresso $2.50
+        <button type="button" onclick="AddToCart(2);">Add to cart</button>
+    </p>
+    <p>
+        Macchiato $2.00
+        <button type="button" onclick="AddToCart(3);">Add to cart</button>
+    </p>
+    <p>
+        Mocha $1.50
+        <button type="button" onclick="AddToCart(4);">Add to cart</button>
+    </p>
+    <p>
+        Latte $2.75
+        <button type="button" onclick="AddToCart(5);">Add to cart</button>
+    </p>
+    <button type="button" onclick="displayCart();">Checkout</button>
+    <p id="cart"></p>
+    Your total is: $<span id="total">0.00</span>
+</body>

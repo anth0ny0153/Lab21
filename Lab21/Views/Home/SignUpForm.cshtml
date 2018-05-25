@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "SignUpForm";
+}
+
+<h2>SignUpForm</h2>
+
+<form action="/Home/AddNewUser" method="post">
+    First Name: <input type="text" name="firstName" required /> <br />
+    Last Name: <input type="text" name="lastName" /> <br />
+    Email: <input type="email" name="email" required placeholder="example@example.com" /> <br />
+    Phone Number: <input type="tel" name="phoneNumber" required placeholder="111-111-1111" /><br />
+    Password: <input type="password" name="password" /> <br />
+    <input type="submit" value="Sign me up!" />
+</form>
